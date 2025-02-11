@@ -1,8 +1,6 @@
 {
   "name": "Alien Night | A Dark Discourse Theme",
-  "component": false,
-  "about_url": "https://github.com/B-iggy/alien-night-discourse-dark-theme",
-  "license_url": "https://github.com/B-iggy/alien-night-discourse-dark-theme/blob/master/LICENSE",
+  "component": true,
   "authors": "Ignaz Biegler",
   "theme_version": "4.1.0",
   "assets": {
