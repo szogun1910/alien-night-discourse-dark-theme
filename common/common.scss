@@ -390,25 +390,5 @@ td {
     visibility: visible;
     transform: translate3d(0, 0, 0);
   }
-/* Ustaw kategorię GameTalkDev na pełną szerokość */
-.category-box-gametalkdev {
-    width: 100% !important;
-    grid-column: 1 / -1; /* Rozciąga kategorię na całą szerokość */
-    margin-bottom: 20px; /* Dodaje odstęp pod kategorią */
-}
-
-/* Dostosuj wygląd pozostałych kategorii */
-.category-list .category-box:not(.category-box-gametalkdev) {
-    width: calc(50% - 10px); /* Ustawia szerokość na połowę kontenera z marginesem */
-    display: inline-block; /* Pozwala na układanie kategorii obok siebie */
-    margin: 5px; /* Dodaje odstępy między kategoriami */
-}
-
-/* Responsywność dla mniejszych ekranów */
-@media (max-width: 768px) {
-    .category-list .category-box:not(.category-box-gametalkdev) {
-        width: 100%; /* Na mniejszych ekranach kategorie zajmują pełną szerokość */
-    }
-}
 }
 
