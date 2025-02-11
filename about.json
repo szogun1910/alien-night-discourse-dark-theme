@@ -1,6 +1,6 @@
 {
   "name": "Alien Night | A Dark Discourse Theme",
-  "component": true,
+  "component": false,
   "authors": "Ignaz Biegler",
   "theme_version": "4.1.0",
   "assets": {
