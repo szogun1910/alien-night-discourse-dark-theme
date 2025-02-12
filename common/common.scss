@@ -390,5 +390,11 @@ td {
     visibility: visible;
     transform: translate3d(0, 0, 0);
   }
+
+  tr[data-category-id="20"]::after {
+    content: "";
+    display: block;
+    height: 20px; /* Ustaw wysokość pustego wiersza */
+}
 }
 
