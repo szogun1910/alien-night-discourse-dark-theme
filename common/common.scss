@@ -444,6 +444,13 @@
   gap: 1.5em; /* Odstęp między kategoriami */
 }
 
+.multiplayer-servers {
+  margin-top: 2em; // Odstęp od głównych kategorii
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Trzy kolumny
+  gap: 1.5em; // Odstęp między kategoriami
+}
+
 .other-categories .category-box {
   border-left-width: 6px;
   border-style: solid;
