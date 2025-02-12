@@ -65,95 +65,83 @@
   margin-bottom: 1em;
   width: 100%;
 
-  .category-boxes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Dokładnie trzy kolumny */
-    gap: 1.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    width: 100%;
-  
-    .category-box:first-child {
-      grid-column: 1 / -1; /* Pierwsza kategoria zajmuje całą szerokość (trzy kolumny) */
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
-  
-    .category-box {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      align-content: flex-start;
-      box-sizing: border-box;
-      border-width: 0;
-      border-left-width: 6px;
-      border-style: solid;
-      border-color: var(--category-badge-color, var(--primary-low));
-  
-      .mobile-view & {
-        width: 100%;
-      }
-  
-      h3 .d-icon {
-        margin-right: 0;
-      }
-  
-      .parent-box-link {
-        &::before {
-          content: "";
-          position: absolute;
-          z-index: 0;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-        }
-      }
-  
-      .category-logo.aspect-image img {
-        display: block;
-        width: auto;
-        height: 40px;
-        margin: 0 auto 1em auto;
-      }
-  
-      @supports (--custom: property) {
-        .category-logo.aspect-image img {
-          --height: 40px;
-          height: var(--height);
-          width: calc(var(--height) * var(--aspect-ratio));
-          max-width: 100%;
-        }
-      }
-    }
-  
-    .category-box-inner {
-      box-sizing: border-box;
+  .category-box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    box-sizing: border-box;
+    border-width: 0;
+    border-left-width: 6px;
+    border-style: solid;
+    border-color: var(--category-badge-color, var(--primary-low));
+
+    .mobile-view & {
       width: 100%;
-      padding: 1em;
-      display: flex;
-      flex-direction: column;
-      border-width: 2px;
-      border-left-width: 0;
-      border-style: solid;
-      border-color: var(--primary-low);
     }
-  
-    &.no-logos {
-      .category-logo {
-        display: none;
+
+    h3 .d-icon {
+      margin-right: 0;
+    }
+
+    .parent-box-link {
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
       }
+    }
+
+    .category-logo.aspect-image img {
+      display: block;
+      width: auto;
+      height: 40px;
+      margin: 0 auto 1em auto;
+    }
+
+    @supports (--custom: property) {
+      .category-logo.aspect-image img {
+        --height: 40px;
+        height: var(--height);
+        width: calc(var(--height) * var(--aspect-ratio));
+        max-width: 100%;
+      }
+    }
+  }
+
+  .category-box-inner {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border-width: 2px;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: var(--primary-low);
+  }
+
+  &.no-logos {
+    .category-logo {
+      display: none;
     }
   }
 }
 
 .category-boxes {
-  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr)); /* Domyślny układ dla wszystkich kategorii */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Dokładnie trzy kolumny */
+  gap: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 100%;
 
   .category-box:first-child {
-    grid-column: span 3; /* Pierwsza kategoria zajmuje trzy kolumny */
+    grid-column: 1 / -1; /* Pierwsza kategoria zajmuje całą szerokość (trzy kolumny) */
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -446,4 +434,20 @@
   .category-list {
     margin-bottom: 0;
   }
+}
+
+/* Dodatkowe style dla innych kategorii (np. GameTalkDev) */
+.other-categories {
+  margin-top: 2em; /* Odstęp od głównych kategorii */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trzy kolumny */
+  gap: 1.5em; /* Odstęp między kategoriami */
+}
+
+.other-categories .category-box {
+  border-left-width: 6px;
+  border-style: solid;
+  border-color: var(--category-badge-color, var(--primary-low));
+  padding: 1em;
+  background-color: var(--primary-very-low);
 }
