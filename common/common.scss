@@ -150,7 +150,13 @@
     align-items: center;
     display: flex;
   }
-
+.serwery-multiplayer .category-box:first-child {
+    grid-column: span 3;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
   .category-box:not(:first-child) {
     grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
   }
