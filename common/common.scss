@@ -447,4 +447,18 @@
   .category-list {
     margin-bottom: 0;
   }
+  .category-boxes {
+  display: block;
+}
+
+.category-boxes .category-box[data-category-id="22"] {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-column: span 3;
+}
+
 }
