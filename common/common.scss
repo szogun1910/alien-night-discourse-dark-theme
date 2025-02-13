@@ -444,23 +444,28 @@
 .navigation-categories .category-list {
   margin-bottom: 3em;
 
-  .category-list {
-    margin-bottom: 0;
-  }
+/* Sprawia, że kategoria 22 zajmuje całą szerokość */
 .category-boxes {
-  display: flex !important;
-  flex-direction: column !important;
-  grid-template-columns: 1fr !important;
-  width: 100% !important;
+    display: grid;
+    grid-template-columns: 1fr; /* Jedna kolumna na całą szerokość */
+    gap: 1em; /* Odstęp między kategoriami */
 }
 
-.category-boxes .category-box[data-category-id="22"] {
-  width: 100% !important;
-  max-width: 100% !important;
-  grid-column: 1 / -1 !important; /* Pełna szerokość */
-  text-align: center !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  }
+.category-box[data-category-id="22"] {
+    grid-column: span 1; /* Pełna szerokość */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* Pozostałe kategorie ustawione w siatce poniżej */
+.category-box:not([data-category-id="22"]) {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 }
