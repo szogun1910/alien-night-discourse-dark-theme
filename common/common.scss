@@ -459,13 +459,13 @@
 /* Ustawienia ogólne dla kontenera kategorii */
 .category-boxes {
   display: grid;
-  grid-template-columns: 1fr; /* Jedna kolumna na całą szerokość */
-  gap: 1em; /* Odstęp między kategoriami */
+  grid-template-columns: repeat(3, 1fr); /* Spróbuj podziału na 3 kolumny */
+  gap: 1em;
 }
 
 /* Kategoria 22 zajmuje całą szerokość */
 .category-box[data-category-id="22"] {
-  grid-column: 1 / -1; /* Rozciągnij na całą szerokość */
+  grid-column: 1 / span 3 !important;
   display: flex;
   justify-content: center;
   align-items: center;
