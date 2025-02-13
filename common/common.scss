@@ -456,27 +456,41 @@
 .navigation-categories .category-list {
   margin-bottom: 3em;
 
-  /* Sprawia, że kategoria 22 zajmuje całą szerokość */
-  .category-boxes {
-    display: grid;
-    grid-template-columns: 1fr; /* Jedna kolumna na całą szerokość */
-    gap: 1em; /* Odstęp między kategoriami */
-  }
+/* Ustawienia ogólne dla kontenera kategorii */
+.category-boxes {
+  display: grid;
+  grid-template-columns: 1fr; /* Jedna kolumna na całą szerokość */
+  gap: 1em; /* Odstęp między kategoriami */
+}
 
-  .category-box[data-category-id="22"] {
-    grid-column: span 1; /* Pełna szerokość */
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
+/* Kategoria 22 zajmuje całą szerokość */
+.category-box[data-category-id="22"] {
+  grid-column: 1 / -1; /* Rozciągnij na całą szerokość */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  /* Pozostałe kategorie ustawione w siatce poniżej */
-  .category-box:not([data-category-id="22"]) {
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+/* Pozostałe kategorie ustawione w siatce */
+.category-box:not([data-category-id="22"]) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Pierwsza kategoria (jeśli potrzebna inna stylizacja) */
+.category-boxes .category-box:first-child {
+  grid-column: span 3; /* Rozciągnij na trzy kolumny */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* Pozostałe kategorie (jeśli potrzebna inna stylizacja) */
+.category-boxes .category-box:not(:first-child) {
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+}
 }
