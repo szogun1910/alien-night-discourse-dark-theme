@@ -478,4 +478,13 @@
   tr[data-category-id="20"], tr[data-category-id="22"] {
   grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
 }
+.category-box[data-category-id="20"],
+.category-box[data-category-id="22"] {
+  grid-column: span 3; /* Rozciągnij na trzy kolumny */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 }
